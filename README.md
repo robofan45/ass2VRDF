@@ -47,19 +47,18 @@ The gripper fingers are controlled by prismatic joints called `gripper_finger_le
 
 The `gripper_finger_right_joint` is set to mimic the `gripper_finger_left_joint` with a multiplier of -1. This means that when the left finger moves, the right finger moves in the opposite direction, allowing the gripper to grip objects symmetrically.
 
-## Facility
-1. Install ROS following the official ROS installation guide for your OS.
-2. Clone this repo to your ROS workspace:
+
+1. Clone this repo to your ROS workspace:
              ```
              CD ~/catkin_ws/src
              git clone https://github.com/your-username/ball-handling-robot.git
              ```
-3. Build the package using catkin:
+2. Build the package using catkin:
              ```
              CD ~/catkin_ws
              catkin_make
              ```
-4. Get the ROS configuration file:
+3. Get the ROS configuration file:
              ```
              source ~/catkin_ws/devel/setup.bash
              ```
