@@ -1,43 +1,42 @@
 READ ME
+Ball handling robot
 
-```
-# Ball handling robot
-
-## Task 2 Mobile Robotics PDE4430
+Assignment 2 Mobile Robotics PDE4430
 Ball Handling Robot - A ROS-based robot simulation capable of manipulating balls using a gripper and a depth camera.
 
-## Motivation
+Motivation
 The motivation behind this project is to develop a robot simulation that will demonstrate the capabilities of a ball-handling robot. The project aims to show the integration of a gripper and a depth camera in a ROS environment, allowing the robot to grasp and manipulate balls with precision.
 
-## Build status
+Build status
 The current construction of the project is stable and working as expected. There are no known errors or bugs that require your immediate attention.
 
-##Code style
+Code style
 The code for this project follows the ROS coding style guidelines for consistency and readability.
 
-## Screenshots
-![Ball Handling Robot Screenshot](screenshots/ball_handling_robot.png)
+Screenshots
 
-## Technology/framework used
-- ROS (Robot Operating System)
-- Surveillance and Rviz Simulator.
-- URDF (Unified Robot Description Format)
-- Xacro (XML Macros)
+![image](https://github.com/robofan45/ass2VRDF/assets/115145225/70ddfb19-43a4-4bae-a9b5-cedfb0fbd367)
 
-## Characteristics
-- Four-wheeled robot base for stable mobility
-- Vertically oriented wheels for smooth movement
-- Two-finger gripper to grab balls.
-- Depth camera to perceive the environment and detect balls.
-- ROS based architecture for easy integration and control
+Technology/framework used
+ROS (Robot Operating System)
+Gazebo and Rviz Simulator.
+URDF (Unified Robot Description Format)
+Xacro (XML Macros)
 
-##Code examples
+Characteristics of Robot
+Four-wheeled robot base for stable mobility
+Vertically oriented wheels for smooth movement
+Two-finger gripper to grab balls.
+Depth camera to see the environment and detect balls.
+ROS-based architecture for easy integration and control
+
+Code examples
 The main code of the ball manipulation robot is written in URDF format. Here is a short overview of the code structure:
 
 - The `base_link` represents the main body of the robot.
-- The four wheel links (`front_left_wheel`, `front_right_wheel`, `rear_left_wheel`, `rear_right_wheel`) are connected to the base link by continuous joints.
+- The four-wheel links (`front_left_wheel`, `front_right_wheel`, `rear_left_wheel`, `rear_right_wheel`) are connected to the base link by continuous joints.
 - The `gripper_base` link is fixed to the base link using a fixed joint.
-- The "clamp" link represents the main body of the caliper and is connected to the caliper base by a prismatic joint.
+- The "clamp" link represents the main body of the calliper and is connected to the calliper base by a prismatic joint.
 - Prismatic joints join two gripper finger links (`gripper_finger_left`, `gripper_finger_right`) to the gripper link.
 - The `camera_link` represents the depth camera and is connected to the base link via a fixed joint.
 
@@ -65,7 +64,7 @@ The `gripper_finger_right_joint` is set to mimic the `gripper_finger_left_joint`
              source ~/catkin_ws/devel/setup.bash
              ```
 
-## How to use?
+How to use?
 1. Start the Gazebo simulation:
              ```
              roslaunch ball_handling_robot mirador.launch
@@ -76,13 +75,6 @@ The `gripper_finger_right_joint` is set to mimic the `gripper_finger_left_joint`
              ```
 3. Control the robot using the provided ROS themes and services.
 
-## Contribute
-Contributions to this project are welcome. If you find any issues or have suggestions for improvements, please open an issue or submit a pull request in the GitHub repository.
-
-## Credits
-- The ROS tutorials and documentation were a valuable resource in the development of this project.
-- The Gazebo simulator and its plugins were used to create the simulation environment.
-
-## License
-This project is under the MIT license.
-```
+Credits
+The ROS tutorials, classes and documentation were a valuable resource in the development of this project. The Gazebo simulator and its plugins were used to create the simulation environment.
+and thanks to Dr Sameer Kishore for supervision and guardians. 
