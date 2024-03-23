@@ -54,6 +54,7 @@ The `gripper_finger_right_joint` is set to mimic the `gripper_finger_left_joint`
              git clone https://github.com/your-username/ball-handling-robot.git
              ```
 2. Build the package using catkin:
+
              ```
              CD ~/catkin_ws
              catkin_make
@@ -65,9 +66,7 @@ The `gripper_finger_right_joint` is set to mimic the `gripper_finger_left_joint`
 
 How to use?
 1. Start the Gazebo simulation:
-             ```
-             roslaunch ball_handling_robot mirador.launch
-             ```
+            relaunch my_robot_pkg spawn_robot.launch             
 2. Start RViz visualization:
              ```
              roslaunch ball_handling_robot rviz.launch
