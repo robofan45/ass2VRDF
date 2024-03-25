@@ -2,20 +2,21 @@ READ ME
 Ball handling robot
 
 Assignment 2 Mobile Robotics PDE4430
-Ball Handling Robot - A ROS-based robot simulation capable of manipulating balls using a gripper and a depth camera.
+Ball Handling Robot - A ROS-based robot simulation that manipulates balls using a gripper and a depth camera.
 
 Motivation
 The motivation behind this project is to develop a robot simulation that will demonstrate the capabilities of a ball-handling robot. The project aims to show the integration of a gripper and a depth camera in a ROS environment, allowing the robot to grasp and manipulate balls with precision.
 
 Build status
-The current construction of the project is stable and working as expected. There are no known errors or bugs that require your immediate attention.
+The current construction of the project is stable and working as expected. There are no known errors or bugs that need your immediate attention.
 
 Code style
 The code for this project follows the ROS coding style guidelines for consistency and readability.
 
 Screenshots
 
-![image](https://github.com/robofan45/ass2VRDF/assets/115145225/70ddfb19-43a4-4bae-a9b5-cedfb0fbd367)
+![image](https://github.com/robofan45/ass2VRDF/assets/115145225/6af8c13d-a3e7-444e-b20e-e10c7972a05e)
+
 
 Technology/framework used
 ROS (Robot Operating System)
@@ -43,7 +44,7 @@ The main code of the ball manipulation robot is written in URDF format. Here is 
 ##Clamp functionality
 The gripper of this robot consists of one "gripper" link and two "gripper_finger" links. The gripper is connected to the `gripper_base` link, which in turn is connected to the `base_link` of the robot.
 
-The gripper fingers are controlled by prismatic joints called `gripper_finger_left_joint` and `gripper_finger_right_joint`. These joints allow the fingers to move along the Y axis, allowing the gripper to open and close.
+The gripper fingers are controlled by prismatic joints called `gripper_finger_left_joint` and `gripper_finger_right_joint`. These joints allow the fingers to move along the Y-axis, allowing the gripper to open and close.
 
 The `gripper_finger_right_joint` is set to mimic the `gripper_finger_left_joint` with a multiplier of -1. This means that when the left finger moves, the right finger moves in the opposite direction, allowing the gripper to grip objects symmetrically.
 
