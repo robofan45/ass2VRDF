@@ -7,7 +7,7 @@
       <box size="0.4 0.3 0.1"/>
     </geometry>
     <material name="base_color">
-      <color rgba="0.8 0.8 0.8 1"/>
+      <color rgba="0.2 0.2 0.2 1"/>
     </material>
   </visual>
   <collision>
@@ -29,7 +29,7 @@
       <cylinder radius="0.1" length="0.05"/>
     </geometry>
     <material name="wheel_color">
-      <color rgba="0.2 0.2 0.2 1"/>
+      <color rgba="0.8 0.8 0.8 1"/>
     </material>
   </visual>
   <collision>
@@ -44,17 +44,15 @@
   </inertial>
 </link>
 
-<joint name="front_left_wheel_joint" type="continuous"># Ball Handling Robot
-
-
+<joint name="front_left_wheel_joint" type="continuous">
   <parent link="base_link"/>
   <child link="front_left_wheel"/>
-  <origin xyz="0.15 0.15 0" rpy="0 0 0"/>
+  <origin xyz="0.15 0.15 -0.05" rpy="0 0 0"/>
   <axis xyz="0 1 0"/>
 </joint>
 
 <gazebo reference="front_left_wheel">
-  <material>Gazebo/Black</material>
+  <material>Gazebo/White</material>
 </gazebo>
 
 <!-- Front Right Wheel -->
@@ -65,7 +63,7 @@
       <cylinder radius="0.1" length="0.05"/>
     </geometry>
     <material name="wheel_color">
-      <color rgba="0.2 0.2 0.2 1"/>
+      <color rgba="0.8 0.8 0.8 1"/>
     </material>
   </visual>
   <collision>
@@ -83,12 +81,12 @@
 <joint name="front_right_wheel_joint" type="continuous">
   <parent link="base_link"/>
   <child link="front_right_wheel"/>
-  <origin xyz="0.15 -0.15 0" rpy="0 0 0"/>
+  <origin xyz="0.15 -0.15 -0.05" rpy="0 0 0"/>
   <axis xyz="0 1 0"/>
 </joint>
 
 <gazebo reference="front_right_wheel">
-  <material>Gazebo/Black</material>
+  <material>Gazebo/White</material>
 </gazebo>
 
 <!-- Rear Left Wheel -->
@@ -99,7 +97,7 @@
       <cylinder radius="0.1" length="0.05"/>
     </geometry>
     <material name="wheel_color">
-      <color rgba="0.2 0.2 0.2 1"/>
+      <color rgba="0.8 0.8 0.8 1"/>
     </material>
   </visual>
   <collision>
@@ -117,12 +115,12 @@
 <joint name="rear_left_wheel_joint" type="continuous">
   <parent link="base_link"/>
   <child link="rear_left_wheel"/>
-  <origin xyz="-0.15 0.15 0" rpy="0 0 0"/>
+  <origin xyz="-0.15 0.15 -0.05" rpy="0 0 0"/>
   <axis xyz="0 1 0"/>
 </joint>
 
 <gazebo reference="rear_left_wheel">
-  <material>Gazebo/Black</material>
+  <material>Gazebo/White</material>
 </gazebo>
 
 <!-- Rear Right Wheel -->
@@ -133,7 +131,7 @@
       <cylinder radius="0.1" length="0.05"/>
     </geometry>
     <material name="wheel_color">
-      <color rgba="0.2 0.2 0.2 1"/>
+      <color rgba="0.8 0.8 0.8 1"/>
     </material>
   </visual>
   <collision>
@@ -151,12 +149,12 @@
 <joint name="rear_right_wheel_joint" type="continuous">
   <parent link="base_link"/>
   <child link="rear_right_wheel"/>
-  <origin xyz="-0.15 -0.15 0" rpy="0 0 0"/>
+  <origin xyz="-0.15 -0.15 -0.05" rpy="0 0 0"/>
   <axis xyz="0 1 0"/>
 </joint>
 
 <gazebo reference="rear_right_wheel">
-  <material>Gazebo/Black</material>
+  <material>Gazebo/White</material>
 </gazebo>
 
 <!-- Gripper Base -->
@@ -166,7 +164,7 @@
       <box size="0.1 0.1 0.05"/>
     </geometry>
     <material name="gripper_base_color">
-      <color rgba="0 0 1 1"/>
+      <color rgba="0.2 0.2 0.2 1"/>
     </material>
   </visual>
   <collision>
@@ -183,133 +181,129 @@
 <joint name="gripper_base_joint" type="fixed">
   <parent link="base_link"/>
   <child link="gripper_base"/>
-  <origin xyz="0.2 0 0.075" rpy="0 0 0"/>
+  <origin xyz="0.25 0 0.075" rpy="0 0 0"/>
 </joint>
 
 <gazebo reference="gripper_base">
-  <material>Gazebo/Blue</material>
+  <material>Gazebo/Gray</material>
 </gazebo>
 
-<!-- Gripper -->
-<link name="gripper">
+<!-- Gripper Palm -->
+<link name="gripper_palm">
   <visual>
-    <origin xyz="0 0 -0.05" rpy="0 0 0"/>
     <geometry>
-      <box size="0.2 0.1 0.1"/>
+      <box size="0.1 0.2 0.05"/>
     </geometry>
-    <material name="gripper_color">
-      <color rgba="0 0 1 1"/>
+    <material name="gripper_palm_color">
+      <color rgba="0.8 0.8 0.8 1"/>
     </material>
   </visual>
   <collision>
-    <origin xyz="0 0 -0.05" rpy="0 0 0"/>
     <geometry>
-      <box size="0.2 0.1 0.1"/>
+      <box size="0.1 0.2 0.05"/>
     </geometry>
   </collision>
   <inertial>
-    <origin xyz="0 0 -0.05" rpy="0 0 0"/>
-    <mass value="0.5"/>
-    <inertia ixx="0.001667" ixy="0" ixz="0" iyy="0.001667" iyz="0" izz="0.000833"/>
+    <mass value="0.1"/>
+    <inertia ixx="0.000333" ixy="0" ixz="0" iyy="0.001667" iyz="0" izz="0.001667"/>
   </inertial>
 </link>
 
-<joint name="gripper_joint" type="prismatic">
+<joint name="gripper_palm_joint" type="fixed">
   <parent link="gripper_base"/>
-  <child link="gripper"/>
-  <origin xyz="0 0 0.025" rpy="0 0 0"/>
-  <axis xyz="0 1 0"/>
-  <limit lower="-0.05" upper="0.05" effort="20" velocity="0.1"/>
+  <child link="gripper_palm"/>
+  <origin xyz="0.1 0 0" rpy="0 0 0"/>
 </joint>
 
-<gazebo reference="gripper">
-  <material>Gazebo/Blue</material>
+<gazebo reference="gripper_palm">
+  <material>Gazebo/White</material>
 </gazebo>
 
 <!-- Gripper Left Finger -->
 <link name="gripper_finger_left">
   <visual>
-    <origin xyz="0.05 0.025 -0.05" rpy="0 0 0"/>
+    <origin xyz="0.05 0.02 0" rpy="0 0 0"/>
     <geometry>
-      <box size="0.1 0.05 0.1"/>
+      <box size="0.1 0.02 0.05"/>
     </geometry>
     <material name="gripper_finger_color">
-      <color rgba="0 0 1 1"/>
+      <color rgba="0.2 0.2 0.2 1"/>
     </material>
   </visual>
   <collision>
-    <origin xyz="0.05 0.025 -0.05" rpy="0 0 0"/>
+    <origin xyz="0.05 0.02 0" rpy="0 0 0"/>
     <geometry>
-      <box size="0.1 0.05 0.1"/>
+      <box size="0.1 0.02 0.05"/>
     </geometry>
   </collision>
   <inertial>
-    <origin xyz="0.05 0.025 -0.05" rpy="0 0 0"/>
-    <mass value="0.1"/>
-    <inertia ixx="0.000083" ixy="0" ixz="0" iyy="0.000083" iyz="0" izz="0.000083"/>
+    <origin xyz="0.05 0.02 0" rpy="0 0 0"/>
+    <mass value="0.05"/>
+    <inertia ixx="0.000021" ixy="0" ixz="0" iyy="0.000021" iyz="0" izz="0.000021"/>
   </inertial>
 </link>
 
 <joint name="gripper_finger_left_joint" type="prismatic">
-  <parent link="gripper"/>
+  <parent link="gripper_palm"/>
   <child link="gripper_finger_left"/>
-  <origin xyz="-0.1 0 0" rpy="0 0 0"/>
-  <axis xyz="1 0 0"/>
-  <limit lower="0" upper="0.1" effort="10" velocity="0.1"/>
+  <origin xyz="0 0.08 0" rpy="0 0 0"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="0" upper="0.05" effort="10" velocity="0.1"/>
 </joint>
 
 <gazebo reference="gripper_finger_left">
-  <material>Gazebo/Blue</material>
+  <material>Gazebo/Gray</material>
 </gazebo>
 
 <!-- Gripper Right Finger -->
 <link name="gripper_finger_right">
   <visual>
-    <origin xyz="-0.05 -0.025 -0.05" rpy="0 0 0"/>
+    <origin xyz="0.05 -0.02 0" rpy="0 0 0"/>
     <geometry>
-      <box size="0.1 0.05 0.1"/>
+      <box size="0.1 0.02 0.05"/>
     </geometry>
     <material name="gripper_finger_color">
-      <color rgba="0 0 1 1"/>
+      <color rgba="0.2 0.2 0.2 1"/>
     </material>
   </visual>
   <collision>
-    <origin xyz="-0.05 -0.025 -0.05" rpy="0 0 0"/>
+    <origin xyz="0.05 -0.02 0" rpy="0 0 0"/>
     <geometry>
-      <box size="0.1 0.05 0.1"/>
+      <box size="0.1 0.02 0.05"/>
     </geometry>
   </collision>
   <inertial>
-    <origin xyz="-0.05 -0.025 -0.05" rpy="0 0 0"/>
-    <mass value="0.1"/>
-    <inertia ixx="0.000083" ixy="0" ixz="0" iyy="0.000083" iyz="0" izz="0.000083"/>
+    <origin xyz="0.05 -0.02 0" rpy="0 0 0"/>
+    <mass value="0.05"/>
+    <inertia ixx="0.000021" ixy="0" ixz="0" iyy="0.000021" iyz="0" izz="0.000021"/>
   </inertial>
 </link>
 
 <joint name="gripper_finger_right_joint" type="prismatic">
-  <parent link="gripper"/>
+  <parent link="gripper_palm"/>
   <child link="gripper_finger_right"/>
-  <origin xyz="0.1 0 0" rpy="0 0 0"/>
-  <axis xyz="-1 0 0"/>
-  <limit lower="-0.1" upper="0" effort="10" velocity="0.1"/>
-  <mimic joint="gripper_finger_left_joint" multiplier="-1"/>
+  <origin xyz="0 -0.08 0" rpy="0 0 0"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="-0.05" upper="0" effort="10" velocity="0.1"/>
 </joint>
 
 <gazebo reference="gripper_finger_right">
-  <material>Gazebo/Blue</material>
+  <material>Gazebo/Gray</material>
 </gazebo>
 
 <!-- Depth Camera -->
 <link name="camera_link">
   <visual>
+    <origin xyz="0 0 0.025" rpy="0 0 0"/>
     <geometry>
       <box size="0.05 0.05 0.05"/>
     </geometry>
     <material name="camera_color">
-      <color rgba="0.8 0.8 0.8 0.8"/>
+      <color rgba="0.2 0.2 0.2 1"/>
     </material>
   </visual>
   <collision>
+    <origin xyz="0 0 0.025" rpy="0 0 0"/>
     <geometry>
       <box size="0.05 0.05 0.05"/>
     </geometry>
@@ -327,6 +321,7 @@
 </joint>
 
 <gazebo reference="camera_link">
+  <material>Gazebo/Gray</material>
   <sensor type="depth" name="depth_camera">
     <update_rate>30</update_rate>
     <camera>
@@ -366,6 +361,6 @@
       <hackBaseline>0</hackBaseline>
     </plugin>
   </sensor>
-  </gazebo>
+</gazebo>
 
 </robot>
